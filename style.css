@@ -1,19 +1,202 @@
 body{
     padding: 0;
     margin: 0;
+    margin-bottom: 20px;
     box-sizing: border-box;
     background-color: rgb(21, 21, 21);
-
+    font-family: 'Poppins', sans-serif;
 }
-
-.box1,.box2{
+.container {
+    height: 100vh;   
+}
+.box1,.todo-container{
     width:80%;
     color: rgb(214, 214, 214);
     background-color: rgba(46, 46, 46, 0.635);
     margin: auto;
+    border-radius: 30px;
+    padding: 20px
 }
 .box1{
     position: relative;
-    top:20%;
+    height:35%;
+    top:10%;
+        /* display:flex;
+        flex-direction: column; */
 
+}
+.todo-container{
+    min-height: 50%;
+    height:auto;
+    padding: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    top:15%;
+
+}
+label{
+    margin: 5px 0px 5px 10px;
+}
+
+input[id="task"]{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:100%;
+    height:50%;
+    background-color: rgb(21, 21, 21);
+    padding: 12px 20px;
+    display: inline-block;
+    border:1px solid rgb(58, 58, 58);
+    border-radius: 4px;
+    outline: none;
+    color:rgb(214, 214, 214);
+    box-sizing: border-box;
+    font-size:x-large;
+}
+input[id="task"]:focus{
+    border: 2px solid rgb(97, 97, 97);
+    background-color: rgb(46, 46, 46);
+    
+}
+input[type=datetime-local]{
+    outline: none;
+    width:60%;
+    font-size:x-large;
+    font-family:'Poppins';
+    color:rgb(167, 167, 167);
+    border:1px solid rgb(58, 58, 58);
+    border-radius: 4px;
+    background-color: rgb(21, 21, 21);
+}
+input[type=datetime-local]:focus{
+    
+    color:rgb(167, 167, 167);
+    border:2px solid rgb(97, 97, 97);
+    background-color: rgb(46, 46, 46);
+}
+input[type=datetime-local]::-webkit-calendar-picker-indicator{
+    background-color:rgb(132, 132, 132);
+    margin: 5px;
+    border-radius: 4px;
+}
+
+.addButton{
+    display:block;
+    outline: none;
+    width:60%;
+    margin:10px auto;   
+    font-size:large;
+    font-family:'Poppins';
+    color:rgb(167, 167, 167);
+    border:1px solid rgb(58, 58, 58);
+    border-radius: 14px;
+    background-color: rgb(21, 21, 21);
+}
+.addButton:hover{
+    background-color:rgb(97, 97, 97);
+}
+
+
+.todo{
+    font-family: "Poppins";
+    font-size:large;
+    margin:5px;
+    padding:5px;
+    border-radius:5px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    align-items:center; 
+    background-color:rgb(54, 54, 54);
+    border:1px solid rgb(44, 44, 44);
+    transition:all 0.5s ease-in;
+}
+.todo-item{
+    flex: 3;
+    
+}
+.todoList{
+    list-style:none;
+    padding:5px;
+}
+.todo-btns{
+    width:30%;
+}
+.doneBtn, .trashBtn{
+    
+    outline: none;
+    border:none;
+    cursor: pointer;
+    font-size: large;
+    padding:1rem;
+    box-shadow: none;
+    color:rgb(255, 255, 255);   
+    
+}
+
+.doneBtn{
+    background-color:rgb(0, 255, 98);
+}
+.trashBtn{
+    background-color:rgb(255, 77, 0);
+}
+.doneBtn:hover{
+    background-color:rgb(0, 210, 81);
+}
+.trashBtn:hover{
+    background-color:rgb(220, 66, 0);
+}
+.bi{
+    pointer-events:none;
+    
+}
+.completed{
+    text-decoration:line-through;
+    background-color:rgb(83, 222, 110);
+    color:black;
+    
+}
+.fall{
+    transform: translateX(8rem) rotateZ(10deg);
+    opacity:0;
+}
+select{
+    -webkit-appearance: none;
+    -moz-appearance:none;
+    appearance: none;
+    box-sizing: border-box;
+    outline: none;
+    box-shadow:none;
+    border:none;
+}
+select{
+    color:rgb(91, 125, 146);
+    background-color:rgb(45, 45, 45); 
+    position: absolute; 
+    width:10rem;
+    right:0;
+    height:3.5rem;
+    padding:0.5rem;
+    top:0;
+    margin-top:0;
+}
+.select{
+    padding:1.5rem;
+    position: relative;
+    top:0;
+    margin:1rem;
+}   
+.select::after{
+    content: '\25BC';
+    position: absolute;
+    right:0;
+    top:0;
+    background-color: rgb(91, 125, 146);
+    padding:1rem;
+    pointer-events:none;
+    transition: all 0.33s ease;
+}
+.select:hover::after{
+    color:rgb(91, 125, 146);
+    background-color:rgb(45, 45, 45)
 }
